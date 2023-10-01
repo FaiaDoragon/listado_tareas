@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 require('colors');
 
+// esquema de la interfaz de la aplicacion
 const preguntas = [
     {
         type: 'list',
@@ -39,6 +40,7 @@ const preguntas = [
     }
 ]
 
+//impresion en consola del esquema
 const inquirerMenu = async() => {
 
     //console.clear();
@@ -51,6 +53,7 @@ const inquirerMenu = async() => {
     return option;
 }
 
+//pausa la interfaz para confimar con ENTER
 const pausa = async() => {
 
     const question = [
@@ -66,6 +69,7 @@ const pausa = async() => {
     await inquirer.prompt(question)
 }
 
+//pedir descripcion al usuario de la tarea
 const leerInput = async(message) =>{
 
     const question = [
@@ -87,6 +91,7 @@ const leerInput = async(message) =>{
     return desc;
 }
 
+//muestra una lista de tareas para selecionar cual borrar
 const listadoTareasBorrar = async( tareas = []) => {
 
     const choices = tareas.map ( (tarea, i) => {
@@ -117,6 +122,7 @@ const listadoTareasBorrar = async( tareas = []) => {
     return id;
 }
 
+//confirmacion de seleccion
 const confirmar = async(message) => {
 
     const question = [
@@ -132,6 +138,7 @@ const confirmar = async(message) => {
     return ok
 }
 
+//muestra una lista de las tareas para mostrar cuales marcar como completadas y pendientes
 const mostrarListadoChecklist = async( tareas = []) => {
 
     const choices = tareas.map ( (tarea, i) => {

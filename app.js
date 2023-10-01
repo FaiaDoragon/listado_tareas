@@ -39,11 +39,9 @@ const main = async() => {
             case '1': // Crear Tareas
                 const desc = await leerInput('Descripcion: ')
                 tareas.crearTarea( desc );
+            break; 
 
-                
-            break; // Listar todas las tareas
-
-            case '2':
+            case '2':// Listar todas las tareas
                 tareas.listadoCompleto()
             break;
 
